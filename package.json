@@ -1,0 +1,15 @@
+{
+  "name": "easy-search",
+  "version": "1.0.0",
+  "description": "NPM library to simplify the process of implementing variety of search types in your apps",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marina Kim <marina.kim.mk90@gmail.com>",
+  "license": "Apache-2.0"
+}
