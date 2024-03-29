@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect, useState } from "react";
 
 export default function Search({
   data = [],
@@ -7,52 +6,55 @@ export default function Search({
   bg = "#dedede",
   text = "black",
 }) {
-  const [filteredByFields, setFilteredByFields] = useState([]);
-  const [filtered, setFiltered] = useState([]);
-  const [searchField, setSearchField] = useState("");
+  // const [filteredByFields, setFilteredByFields] = useState([]);
+  // const [filtered, setFiltered] = useState([]);
+  const [searchField, setSearchField] = React.useState("");
 
-  useEffect(() => {
-    filterDataByFields();
-  }, []);
+  // useEffect(() => {
+  //   filterDataByFields();
+  // }, []);
 
   const handleChange = (e) => {
     setSearchField(e.target.value);
+    console.log(e.target.value);
   };
 
-  useEffect(() => {
-    filterDataBySearchField(filteredByFields, searchField);
-  }, [filteredByFields, searchField]);
+  // useEffect(() => {
+  //   filterDataBySearchField(filteredByFields, searchField);
+  // }, [filteredByFields, searchField]);
 
   const handleKeyUp = (e) => {
     if (e.key === "Escape") {
-      setSearchField("");
+      // setSearchField("");
+      console.log("Escape");
     } else if (e.key === "Enter") {
+      console.log("Enter");
     }
   };
 
-  const filterDataByFields = () => {
-    let res = data.map((item) => {
-      return fields.reduce((acc, field) => {
-        acc[field] = item[field];
-        return acc;
-      }, {});
-    });
+  // const filterDataByFields = () => {
+  //   let res = data.map((item) => {
+  //     return fields.reduce((acc, field) => {
+  //       acc[field] = item[field];
+  //       return acc;
+  //     }, {});
+  //   });
 
-    setFilteredByFields(res);
-  };
+  //   setFilteredByFields(res);
+  // };
 
-  const filterDataBySearchField = (data, field) => {
-    let res = data.filter((item) => {
-      return Object.values(item).some((value) => {
-        if (typeof value === "string") {
-          return value.toLowerCase().includes(field.toLowerCase());
-        }
-        return false;
-      });
-    });
+  // const filterDataBySearchField = (data, field) => {
+  //   let res = data.filter((item) => {
+  //     return Object.values(item).some((value) => {
+  //       if (typeof value === "string") {
+  //         return value.toLowerCase().includes(field.toLowerCase());
+  //       }
+  //       return false;
+  //     });
+  //   });
 
-    setFiltered(res);
-  };
+  //   setFiltered(res);
+  // };
 
   return (
     <div>
@@ -63,7 +65,7 @@ export default function Search({
         value={searchField}
         onKeyUp={handleKeyUp}
       />
-      <div>
+      {/* <div>
         <table style={{ width: "100vw" }}>
           <thead>
             <tr style={{ background: bg, color: text }}>
@@ -87,7 +89,7 @@ export default function Search({
               })}
           </tbody>
         </table>
-      </div>
+      </div> */}
     </div>
   );
 }
