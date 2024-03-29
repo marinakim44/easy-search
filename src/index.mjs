@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Search({
   data = [],
@@ -8,7 +8,7 @@ export default function Search({
 }) {
   // const [filteredByFields, setFilteredByFields] = useState([]);
   // const [filtered, setFiltered] = useState([]);
-  const [searchField, setSearchField] = React.useState("");
+  const [searchField, setSearchField] = useState("");
 
   // useEffect(() => {
   //   filterDataByFields();
