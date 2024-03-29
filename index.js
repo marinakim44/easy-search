@@ -9,9 +9,4 @@ class Searchbox {
   }
 }
 
-// module.exports = Searchbox;
-
-const searchbox = new Searchbox("searchbox-container");
-console.log(searchbox.onchange);
-// from project root folder run the following command to compile to older ES
-// npx babel src/searchbox.js --out-file dist/searchbox.js
+module.exports = Searchbox;
